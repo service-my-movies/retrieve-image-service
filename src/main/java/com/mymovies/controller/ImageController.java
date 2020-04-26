@@ -30,7 +30,7 @@ public class ImageController implements IImageController {
 		try {
 			image = imageService.getAPI_Image(movie_id);
 		} catch (Exception e) {
-			LOGGER.error("Unexpected Error: getAPI_Image: " + e);
+			LOGGER.error("Unexpected Error From Controller: getAPI_Image: " + e);
 		}
 
 		return image;
