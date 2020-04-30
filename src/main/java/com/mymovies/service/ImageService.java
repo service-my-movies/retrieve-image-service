@@ -32,8 +32,12 @@ public class ImageService implements IImageService {
 
 		ImageDTO images  = null;
 		
+		String url = BASE_URL+movie_id+"/images"+API_KEY+Language;
+		
+		LOGGER.info("@Get getAPI_Image Service URL : " + url);
+		
 		try {
-			images = restTemplate.getForObject(BASE_URL+movie_id+"/images"+API_KEY+Language, ImageDTO.class);
+			images = restTemplate.getForObject(url, ImageDTO.class);
 		} catch (Exception e) {
 			LOGGER.error("Unexpected Error From Service: getAPI_Image: " + e);
 		}
